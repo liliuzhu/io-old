@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+	<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+	<title>项目详情展示3D</title>
+	<link rel="icon" href="../favicon.ico"/>
+	<style>
+		html,body{
+			margin: 0;
+			padding: 0;
+			height: 100vh;
+			width: 100vw;
+			overflow: hidden;
+			background-color: #002800;
+			position: relative;
+			-webkit-user-select:none;
+			-moz-user-select:none;
+			-ms-user-select:none;
+			user-select:none;
+		}
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 20vh auto;
+			width: 60vw;
+			height: 60vh;
+		}
+		li {
+			width: 80%;
+			text-align: center;
+			cursor: pointer;
+			overflow: hidden;
+		}
+		li:hover{
+			-webkit-box-shadow: 0 0 10px  #bbb;
+			-moz-box-shadow: 0 0 10px #bbb;
+			box-shadow: 0 0 10px #bbb;
+		}
+		li img {
+			width: 100%;
+			/*height: 100%;*/
+		}
+		li.roundabout-in-focus {
+			/*cursor: default;*/
+		}
+		li span {
+			display: block;
+			padding-top: 6em;
+		}
+		.mask{
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background: rgba(0, 0, 0, 0.5);
+			opacity: 0;
+			z-index: 8;
+			visibility: hidden;
+			-webkit-transform: scale3d(1,1,1);
+			transform: scale3d(1,1,1);
+			-webkit-transition-duration: 300ms;
+			transition-duration: 300ms;
+		}
+		.mask.mask_in{
+			visibility: visible;
+			opacity: 1;
+			-webkit-transition-duration: 0ms;
+			transition-duration: 0ms;
+		}
+		#carbonads-container .carbonad {
+			margin: 0 auto;
+		}
+		.platform{
+			width: 100vw;
+			height: 100vh;
+			background: -webkit-radial-gradient(circle,rgba(255,255,255,.5) 0%,rgba(100,100,100,.2) 50%,rgba(0,0,0,0) 80%);
+			background: -o-radial-gradient(circle,rgba(255,255,255,.5) 0%,rgba(100,100,100,.2) 50%,rgba(0,0,0,0) 80%);
+			background: -moz-radial-gradient(circle,rgba(255,255,255,.5) 0%,rgba(100,100,100,.2) 50%,rgba(0,0,0,0) 80%);
+			background: radial-gradient(circle,rgba(255,255,255,.5) 0%,rgba(100,100,100,.2) 50%,rgba(0,0,0,0) 80%);
+			position: absolute;
+			top:30vh;
+			left:0;
+			border-radius:50%;
+			transform:rotateX(75deg);
+		}
+
+		/*.roundabout-moveable-item {*/
+			/*font-size: 12px!important;*/
+			/*height: 300px;*/
+			/*width: 600px;*/
+			/*cursor: pointer;*/
+			/*padding: 2px;*/
+			/*border: 1px solid #aaaaaa;*/
+			/*-webkit-border-radius: 5px;*/
+			/*-moz-border-radius: 5px;*/
+			/*background: #f9f9f9;*/
+		/*}*/
+	</style>
+</head>
+<body>
+<ul>
+	<li><img src="./project_3D/img/statrtUp_1.png"/></li>
+	<li><img src="./project_3D/img/statrtUp_2.png"/></li>
+	<li><img src="./project_3D/img/statrtUp_3.png"/></li>
+	<li><img src="./project_3D/img/statrtUp_4.png"/></li>
+	<li><img src="./project_3D/img/statrtUp_5.png"/></li>
+	<li><img src="./project_3D/img/statrtUp_6.png"/></li>
+</ul>
+<a href="javascript:void(0)" class="ban_l_btn"></a>
+<a href="javascript:void(0)" class="ban_r_btn"></a>
+<div class="platform"></div>
+<div class="mask"></div>
+<script src="../JS/jquery.min-1.11.3.js"></script>
+<script src="./project_3D/js/jquery.roundabout.js"></script>
+<!--<script src="./project_3D/js/jquery.roundabout-1.0.min.js"></script>-->
+<script src="./project_3D/js/jquery.easing.1.3.js"></script>
+<script>
+	$(document).ready(function() {
+		$('ul').roundabout({
+			shape: 'figure8',
+			duration: 500, // 运动速度
+			minScale: 0.0,//最小缩放
+			maxScale: 1.0,
+			btnPrev: ".ban_r_btn", // 右按钮
+			btnNext: ".ban_l_btn", // 左按钮
+			autoplay: true,        // 自动播放
+			autoplayDuration: 3000,// 自动播放的时间
+			minOpacity: 0.4,         //最小的透明度
+			maxOpacity: 1,         //最大的透明度
+			reflect: false,         // 为true时是从左向右移动，为false从右向左移动
+			startingChild: 2,      // 默认的显示第几张图片
+			autoplayInitialDelay: 100, // 从第几秒时，开始自动播放（默认毫秒）开始的第一次管用
+			autoplayPauseOnHover: true, // 鼠标移入元素内是否自动播放，为true不播放，false还自动播放
+			enableDrag: true       // 在移动端可以拖拽播放
+		});
+	});
+	// function pause(){
+	// 	$(".roundabout-moveable-item").trigger("mouseenter");
+	// }
+	// function resume(){
+	// 	$(".roundabout-moveable-item").trigger("mouseleave");
+	// }
+</script>
+</body>
+</html>

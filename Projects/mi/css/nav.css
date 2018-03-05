@@ -1,0 +1,462 @@
+nav {
+  position: relative;
+}
+.logo {
+  margin-top: 20px;
+}
+.logoLink {
+  display: block;
+  width: 55px;
+  height: 55px;
+  background: #FF6700 url("../img/mi-logo.png") no-repeat center center;
+}
+.lists {
+  display: inline-block;
+  height: 88px;
+  padding-left: 30px;
+  padding-top: 12px;
+}
+.productClass > a {
+  display: inline-block;
+  font-size: 16px;
+  padding: 24px 16px 40px;
+}
+.productClass > ul {
+  display: none;
+}
+.blank {
+  width: 127px;
+  padding-right: 21px;
+  position: relative;
+}
+.blank > a {
+  display: inline-block;
+  font-size: 16px;
+  padding: 24px 10px 40px;
+  visibility: hidden;
+}
+.toggle-box {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  height: 229px;
+  top: 100px;
+  border-top: 1px solid #E0E0E0 ;
+  display: none;
+  background-color: #fff;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.2);
+}
+.toggle-box li {
+  width: 180px;
+  height: 166px;
+  padding: 35px 9px 20px 12px;
+  position: relative;
+}
+.toggle-box li > div {
+  width: 160px;
+  margin: 0 auto;
+}
+.toggle-box li > a {
+  display: block;
+  width: 180px;
+  text-align: center;
+  padding-top: 10px;
+}
+.toggle-box li p {
+  width: 100%;
+  text-align: center;
+  margin-top: 5px;
+}
+.toggle-box li img {
+  height: 110px;
+  width: 160px;
+}
+.toggle-box li:not(:first-child):before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 35px;
+  z-index: 1;
+  width: 1px;
+  height: 100px;
+  background-color: #E0E0E0;
+}
+.search-box {
+  margin-top: 20px;
+  position: relative;
+  height: 50px;
+}
+.search-box form {
+  position: relative;
+  width: 296px;
+  height: 50px;
+}
+.search-box input {
+  background-color: #fff;
+  border: 1px solid #E0E0E0;
+  outline: none;
+}
+.search-box .search-btn {
+  height: 50px;
+  width: 52px;
+  font-size: 24px;
+  padding: 1px 6px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.search-box .inputKey {
+  height: 48px;
+  width: 223px;
+  padding: 0 10px;
+  position: absolute;
+  top: 0;
+  right: 51px;
+  z-index: 2;
+}
+.search-box :hover input {
+  border: 1px solid #b0b0b0;
+}
+.search-box .select {
+  display: none;
+  font-size: 12px;
+  position: absolute;
+  z-index: 100;
+  background-color: #fff;
+  top: 49px;
+  left: 0;
+  border: 1px solid #FF6700;
+  width: 243px;
+}
+.search-box .select li {
+  width: 243px;
+}
+.search-box .select li a {
+  display: block;
+  padding: 6px 15px;
+}
+.search-box .select li a span {
+  float: right;
+  color: #b0b0b0;
+}
+.search-box .select li:hover {
+  background-color: #f0f0f0;
+}
+.hotSearch {
+  position: absolute;
+  top: 17px;
+  right: 65px;
+  z-index: 5;
+}
+.hotSearch a {
+  background-color: #eee;
+  color: #757575;
+  margin-left: 5px;
+  padding: 2px 5px;
+}
+.option {
+  width: 234px;
+  height: 460px;
+  position: absolute;
+  background: #333;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  font-size: 14px;
+  top: 87.5px;
+  left: -85px;
+}
+.option ul {
+  padding: 20px 0;
+}
+.option ul > li > a {
+  color: #fff;
+  display: block;
+  position: relative;
+  line-height: 42px;
+  padding-left: 30px;
+}
+.option ul > li > a i {
+  font-size: 16px;
+  opacity: 0.5;
+  position: absolute;
+  top: 11px;
+  right: 5px;
+}
+.option li:nth-child(1) .moreProduct,
+.option li:nth-child(2) .moreProduct,
+.option li:nth-child(3) .moreProduct {
+  width: 750px;
+}
+.option li:nth-child(5) .moreProduct {
+  width: 500px;
+}
+.option li:nth-child(4) .moreProduct,
+.option li:nth-child(6) .moreProduct,
+.option li:nth-child(7) .moreProduct,
+.option li:nth-child(8) .moreProduct,
+.option li:nth-child(9) .moreProduct,
+.option li:nth-child(10) .moreProduct {
+  width: 250px;
+}
+.option .hoverList .moreProduct {
+  display: block;
+  z-index: 100;
+}
+.option .moreProduct {
+  display: none;
+  height: 458px;
+  position: absolute;
+  background-color: #fff;
+  top: 0;
+  left: 234px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+.option .moreProduct ol {
+  padding: 2px 0 2px;
+  float: left;
+}
+.option .moreProduct li {
+  line-height: 76px;
+  width: 250px ;
+}
+.option .moreProduct .hovYel {
+  padding: 30px 50px 30px 20px ;
+}
+.option .moreProduct img {
+  vertical-align: middle;
+  padding-right: 10px;
+}
+.option .moreProduct .changeBuy {
+  padding: 2px 12px;
+  border: 1px solid #ff6700;
+  color: #ff6700;
+}
+nav .lists i.iconfont {
+  margin-right: 4px;
+  font-size: 16px;
+  line-height: 20px;
+  vertical-align: -4px;
+}
+/*广告框*/
+.advertising {
+  /* ul.one1{
+    position: absolute;
+    width: 6150px;
+    li{
+    display: inline-block;
+    }
+  }*/
+}
+.advertising .carousel {
+  height: 460px;
+  position: relative;
+  overflow: hidden;
+}
+.advertising .carousel > a {
+  display: inline-block;
+  height: 69px;
+  width: 41px;
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  margin-top: -35px;
+}
+.advertising .carousel a.ad-next {
+  background: transparent url(../img/icon-slides.png) no-repeat -124px 0;
+  right: 0;
+}
+.advertising .carousel a.ad-prev {
+  background: transparent url(../img/icon-slides.png) no-repeat -84px 0;
+  left: 234px;
+}
+.advertising .carousel a.ad-next:hover {
+  background: transparent url(../img/icon-slides.png) no-repeat -42px 0;
+}
+.advertising .carousel a.ad-prev:hover {
+  background: transparent url(../img/icon-slides.png) no-repeat 0 0;
+}
+.advertising ul.one2 {
+  height: 100%;
+}
+.advertising ul.one2 li {
+  position: absolute;
+  transition: all 1s linear 0s;
+  opacity: 0;
+  z-index: 0;
+}
+.advertising ul.one2 li.active {
+  opacity: 1;
+  z-index: 0;
+}
+.advertising ul.index {
+  position: absolute;
+  right: 30px;
+  bottom: 10px;
+  z-index: 10;
+}
+.advertising ul.index li a {
+  border-radius: 50%;
+  border: 2px solid #888;
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  overflow: hidden;
+  background-color: #555;
+  color: transparent;
+  margin: 5px;
+}
+.advertising ul.index li a.navbar {
+  background-color: #E0E0E0;
+}
+.advertising .fourAdv {
+  margin: 20px auto 10px;
+  font-size: 12px;
+  height: 170px;
+  overflow: hidden;
+}
+.advertising .fourAdv div {
+  display: inline-block;
+}
+.advertising .fourAdv .span6 ul {
+  width: 234px;
+  overflow: hidden;
+  background-color: #5f5750;
+  position: relative;
+}
+.advertising .fourAdv .span6 ul li {
+  float: left;
+  width: 78px;
+  height: 85px;
+  text-align: center;
+  position: relative;
+}
+.advertising .fourAdv .span6 ul li :hover {
+  color: #fff;
+}
+.advertising .fourAdv .span6 ul li a {
+  display: block;
+  padding-top: 24px;
+  color: rgba(255, 255, 255, 0.7);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.advertising .fourAdv .span6 ul li.border-left:after,
+.advertising .fourAdv .span6 ul li.border-top:before {
+  position: absolute;
+  content: "";
+  background: #665e57;
+}
+.advertising .fourAdv .span6 ul li.border-left:after {
+  top: 6px;
+  left: 0;
+  width: 1px;
+  height: 70px;
+}
+.advertising .fourAdv .span6 ul li.border-top:before {
+  top: -1px;
+  left: 6px;
+  width: 64px;
+  height: 1px;
+}
+.advertising .fourAdv .span6 i {
+  display: block;
+  height: 24px;
+  margin-bottom: 4px;
+  font-size: 24px;
+  line-height: 24px;
+}
+.advertising .fourAdv .span3 {
+  height: 100%;
+}
+.advertising .fourAdv .span3 li {
+  margin-left: 6px;
+}
+.advertising .leftRight .hasControl,
+.section .leftRight .hasControl {
+  position: relative;
+}
+.advertising .leftRight .hasControl .control,
+.section .leftRight .hasControl .control {
+  position: absolute;
+  top: 30%;
+  right: 0;
+}
+.advertising .leftRight .hasControl .control a,
+.section .leftRight .hasControl .control a {
+  padding: 3px 5px;
+  border: 1px solid #e0e0e0;
+  font-size: 16px;
+  line-height: 16px;
+  cursor: pointer;
+  display: inline-block;
+  width: 24px;
+  text-align: center;
+}
+.advertising .leftRight .hasControl .control a.disabled,
+.section .leftRight .hasControl .control a.disabled {
+  color: #e0e0e0;
+  cursor: default;
+}
+.advertising .leftRight .leftRight-box,
+.section .leftRight .leftRight-box {
+  width: 100%;
+  overflow: hidden;
+  height: 340px;
+  margin-bottom: 40px;
+  position: relative;
+}
+.advertising .leftRight .leftRight-box ul,
+.section .leftRight .leftRight-box ul {
+  width: 2490px;
+  position: absolute;
+  left: 0;
+  transition: left .5s ease 0s;
+}
+.advertising .leftRight .leftRight-box ul li,
+.section .leftRight .leftRight-box ul li {
+  width: 234px;
+  height: 300px;
+  margin-right: 10px;
+  padding-top: 30px;
+  text-align: center;
+  background-color: #fafafa;
+  vertical-align: top;
+}
+.advertising .leftRight .leftRight-box ul li a,
+.section .leftRight .leftRight-box ul li a {
+  display: block;
+}
+.advertising .leftRight .leftRight-box ul li a img,
+.section .leftRight .leftRight-box ul li a img {
+  height: 160px;
+  width: 160px;
+}
+.advertising .leftRight .leftRight-box ul li a + a,
+.section .leftRight .leftRight-box ul li a + a {
+  margin-top: 25px;
+}
+.advertising .leftRight .leftRight-box ul li .trait,
+.section .leftRight .leftRight-box ul li .trait {
+  font-size: 12px;
+  color: #b0b0b0;
+  margin: 2px auto 15px;
+}
+.top-border1 {
+  border-top: 1px solid #FFAC13;
+}
+.top-border2 {
+  border-top: 1px solid  #83C44E;
+}
+.top-border3 {
+  border-top: 1px solid  #2196F3;
+}
+.top-border4 {
+  border-top: 1px solid  #E53935;
+}
+.top-border5 {
+  border-top: 1px solid  #00C0A5;
+}

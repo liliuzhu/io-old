@@ -1,0 +1,394 @@
+/*主体样式*/
+section {
+  background-color: #F5F5F5;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+section .shake,
+section .shakeParent > li {
+  position: relative;
+  transition: all 0.2s linear 0s;
+  -webkitansition: all 0.2s linear 0s;
+}
+section .shake:hover,
+section .shakeParent > li:hover {
+  z-index: 2;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transform: translate3d(0, -2px, 0);
+}
+section .leftRight-box > ul > li {
+  background-color: #fff;
+}
+.classLink {
+  font-size: 16px;
+}
+.floot {
+  margin-top: 20px;
+}
+.floot .hotComment li:not(:first-child) {
+  margin-left: 10px;
+}
+.floot .hotComment li {
+  height: 415px;
+  width: 296px;
+  background-color: #fff;
+}
+.floot .hotComment li p:nth-child(2) {
+  margin: 25px 25px 40px;
+}
+.floot .hotComment li p {
+  margin-left: 25px;
+  margin-bottom: 10px;
+  margin-right: 25px;
+}
+.floot .hotComment li p:last-child a {
+  padding-right: 10px;
+}
+.floot .hotComment li p:last-child span:not(:last-child) {
+  color: #9d9d9d;
+  padding-right: 10px;
+}
+.floot .hotComment .from {
+  font-size: 12px;
+  color: #b0b0b0;
+  margin: 2px auto 15px;
+}
+.floot .flootHeader {
+  overflow: hidden;
+}
+.floot .flootHeader .flootTitle {
+  float: left;
+}
+.floot .flootHeader .matchList {
+  margin-top: 20px;
+}
+.floot .flootHeader .matchList ul > li a {
+  display: inline-block;
+  margin: 2px 10px;
+}
+.floot .flootHeader .matchList a.thisIs {
+  border-bottom: 2px solid #ff6700;
+  color: #ff6700;
+}
+.floot .flootHeader .lookAll,
+.floot .flootHeader .matchList {
+  margin-top: 20px;
+}
+.floot .flootHeader .lookAll a i,
+.floot .flootHeader .matchList a i {
+  background-color: #b0b0b0;
+  border-radius: 50%;
+  padding: 4px;
+  margin-left: 4px;
+  margin-top: 10px;
+  font-size: 12px;
+  transition: all 0.1s linear 0s;
+  color: #fff;
+}
+.floot .flootHeader .lookAll a:hover i,
+.floot .flootHeader .matchList a:hover i {
+  background-color: #ff6700;
+}
+.floot .detail {
+  height: 614px;
+}
+.floot .detail aside {
+  display: inline-block;
+}
+.floot .detail aside > a {
+  display: block;
+  height: 614px;
+  overflow: hidden;
+}
+.floot .detail aside li {
+  height: 300px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+.floot .detail aside li img {
+  height: 300px;
+}
+.floot .detail .moreClass {
+  width: 988px;
+  float: right;
+  height: 614px;
+}
+.floot .detail .moreClass ul {
+  display: none;
+}
+.floot .detail .moreClass ul.activeList {
+  display: block;
+}
+.floot .detail .moreClass ul.activeList li {
+  float: left;
+  background-color: #fff;
+  width: 234px;
+  height: 260px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  vertical-align: top;
+  margin-left: 13px;
+  margin-bottom: 14px;
+}
+.floot .detail .moreClass ul.activeList li a {
+  display: block;
+}
+.floot .detail .moreClass ul.activeList li a img {
+  height: 150px;
+  width: 150px;
+}
+.floot .detail .moreClass ul.activeList li a + a {
+  margin-top: 20px;
+}
+.floot .detail .moreClass ul.activeList li .trait,
+.floot .detail .moreClass ul.activeList li .comment {
+  font-size: 12px;
+  color: #b0b0b0;
+  margin: 2px auto 15px;
+}
+.floot .detail .moreClass ul.activeList li .comment {
+  margin-top: 10px;
+}
+.floot .detail .moreClass ul.activeList li.helfLi {
+  height: 103px;
+}
+.floot .detail .moreClass ul.activeList li.helfLi div {
+  text-align: left;
+  padding-left: 25px;
+  padding-top: 10px;
+}
+.floot .detail .moreClass ul.activeList li.helfLi div h3 {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0 0 5px;
+}
+.floot .detail .moreClass ul.activeList li.helfLi div h2 {
+  font-size: 18px;
+  margin: 0 0 5px;
+  font-weight: normal;
+}
+.floot .detail .moreClass ul.activeList li.helfLi > a {
+  margin-right: 15px;
+  margin-top: 11px;
+  font-size: 48px;
+  line-height: 48px;
+}
+.floot .detail .moreClass ul.activeList li.helfLi > a img {
+  height: 80px;
+  width: 80px;
+}
+.floot .detail .moreClass ul.activeList li.helfLi > a i {
+  margin-left: 20px;
+}
+.floot .content ul > li:not(:first-child) {
+  margin-left: 10px;
+}
+.floot .content ul > li {
+  position: relative;
+  width: 296px;
+  height: 374px;
+  padding: 45px 0 0;
+  background: #fff;
+}
+.floot .content ul > li .title {
+  margin: 0 10px 18px;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+}
+.floot .content ul > li .contentBox {
+  position: relative;
+  height: 340px;
+  overflow: hidden;
+}
+.floot .content ul > li .contentBox ol {
+  left: 0;
+  position: absolute;
+  width: 1184px;
+  transition: left 0.5s ease;
+  -webkit-transition: left 0.5s ease;
+  height: 340px;
+  text-align: center;
+}
+.floot .content ul > li .contentBox ol li {
+  float: left;
+  width: 296px;
+  height: 340px;
+}
+.floot .content ul > li .contentBox ol li > h4 {
+  margin: 0 20px 5px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.floot .content ul > li .contentBox ol li > p.desc {
+  color: #b0b0b0;
+  margin: 0 48px 10px;
+  height: 40px;
+  font-size: 12px;
+  line-height: 20px;
+}
+.floot .content ul > li .contentBox ol li > p.desc a {
+  color: #b0b0b0;
+}
+.floot .content ul > li .contentBox ol li .figure-img img {
+  width: 216px;
+  height: 154px;
+}
+.floot .content ul > li .contentBox ol li.more img.thumb {
+  display: block;
+  width: 216px;
+  height: 154px;
+  margin: 30px auto 0;
+}
+.floot .content ul > li .contentBox ol li.more > a.btn-small {
+  display: inline-block;
+  width: 118px;
+  height: 28px;
+  font-size: 12px;
+  line-height: 28px;
+  border-width: 1px;
+  border-style: solid;
+}
+.floot .content ul > li .contentBox ol li.more a.TxtYel {
+  border-color: #FF6700;
+}
+.floot .content ul > li .pageControl {
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+  left: 0;
+}
+.floot .content ul > li .pageControl ol {
+  width: 100%;
+  text-align: center;
+}
+.floot .content ul > li .pageControl ol li {
+  cursor: pointer;
+  padding: 2px 10px;
+}
+.floot .content ul > li .pageControl ol li span {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  border: 3px solid #b0b0b0;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.floot .content ul > li .pageControl ol li.pageActive span {
+  height: 6px;
+  width: 6px;
+  border: 3px solid #FF6700;
+  color: transparent;
+  margin-bottom: -3px;
+}
+.floot .content ul > li .pageControl ol li:hover span {
+  border-color: #FF6700;
+}
+.floot .content ul > li .pageLeftRight a {
+  position: absolute;
+  top: 50%;
+  width: 20px;
+  height: 24px;
+  padding: 12px 0;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: -30px;
+  background-color: #424242;
+  color: #fff;
+  opacity: 0;
+  -webkit-transition: all .5s linear 0s;
+  transition: all .5s linear 0s;
+}
+.floot .content ul > li .pageLeftRight .toLeft {
+  left: 0;
+}
+.floot .content ul > li .pageLeftRight .toRight {
+  right: 0;
+}
+.floot .content ul > li:hover .pageLeftRight a {
+  opacity: 0.2;
+}
+.floot .content ul > li:hover .pageLeftRight a:hover {
+  opacity: 1;
+  background: #b0b0b0;
+}
+.floot .video ul > li:not(:first-child) {
+  margin-left: 10px;
+}
+.floot .video ul > li {
+  position: relative;
+  width: 296px;
+  height: 285px;
+  margin-bottom: 14px;
+  text-align: center;
+  background: #fff;
+}
+.floot .video ul > li .title {
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+}
+.floot .video ul > li .figure-img {
+  position: relative;
+  width: 296px;
+  height: 180px;
+  margin: 0 0 28px;
+}
+.floot .video ul > li .play {
+  position: absolute;
+  left: 20px;
+  color: #fff;
+  bottom: 10px;
+  width: 32px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-radius: 12px;
+  background-color: #424242;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: all 0.2s linear 0s;
+}
+.floot .video ul > li .play i {
+  font-size: 30px;
+  line-height: 20px;
+}
+.floot .video li > p.desc {
+  height: 18px;
+  font-size: 12px;
+  color: #b0b0b0;
+}
+.floot .video li .figure-img:hover .play {
+  border-color: #FF6700;
+  background-color: #FF6700;
+}
+.txtYel2 {
+  color: #83c44e;
+  border-color: #83c44e;
+}
+.bgtxtYel2:hover {
+  color: #fff;
+  background-color: #83c44e;
+}
+.txtYel4 {
+  color: #e53935;
+  border-color: #e53935;
+}
+.bgtxtYel4:hover {
+  color: #fff;
+  background-color: #e53935;
+}
+.txtYel3 {
+  color: #2196f3;
+  border-color: #2196f3;
+}
+.bgtxtYel3:hover {
+  color: #fff;
+  background-color: #2196f3;
+}
+#section .leftRight-box li {
+  background-color: #fff;
+}

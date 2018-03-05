@@ -1,0 +1,68 @@
+.modal {
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  overflow: hidden;
+  transition: all 0.2s linear 0s;
+}
+.modal div.view {
+  position: absolute;
+  opacity: 0.4;
+  top: 50%;
+  left: 50%;
+  margin-left: -440px;
+  margin-top: -1500px;
+  background-color: #fff;
+  transition: all 0.5s linear 0s;
+  -webkit-transition: all 0.5s linear 0s;
+}
+.modal div.view .modal-hd {
+  position: relative;
+  height: 32px;
+  padding: 14px 20px;
+  background-color: #f5f5f5;
+}
+.modal div.view .modal-hd h3 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32px;
+  color: #424242;
+  margin: 0;
+}
+.modal div.view .modal-hd a {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #757575;
+  cursor: pointer;
+  -webkit-transition: all .2s linear 0s;
+  transition: all .2s linear 0s;
+  z-index: 10;
+  border-radius: 15px;
+  font-size: 24px;
+  font-weight: 200;
+}
+.modal div.view .modal-hd a.close:hover {
+  color: #fff;
+  background-color: #e53935;
+}
+.modal div.view .modal-bd {
+  max-height: 536px;
+}
+.modal div.view .modal-bd iframe {
+  width: 880px;
+  height: 536px;
+  overflow: hidden;
+}
+.modal div.view.play {
+  opacity: 1;
+}

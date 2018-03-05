@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+ <head>
+	 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	 <meta charset="utf-8">
+	 <title>用户中心</title>
+	 <link rel="icon" href="../../../favicon.ico"/>
+	 <link type="text/css" rel="stylesheet" href="style.css"/>
+	 <script type="text/javascript" src="../../../JS/jquery.min-1.11.3.js"></script>
+	 <script type="text/javascript" src="js/orderList.js"></script>
+	 <script type="text/javascript" src="js/lineChart.js"></script>
+	 <script type="text/javascript" src="js/lottery.js"></script>
+	 <script type="text/javascript">
+	 /*
+	   $().ready()的写法
+	   * $(document).ready(function(){})
+	   * $().ready(function(){})
+	   * $(function(){})
+	 */
+	$(function(){
+		/*
+		   1. 菜单的切换效果
+		    * 为所有菜单元素绑定click事件
+			  * 如何获得 3 个菜单元素
+			* click事件的处理函数只有一个
+			  * 事件对应函数处理 3 个菜单
+		    * 问题 - 用户当前点击哪个菜单
+			  * this
+			  * event.target
+		*/
+		$("#playlist a").click(function(event){
+			// 1. 阻止<a>元素默认行为
+			event.preventDefault();
+			/*
+			   2. 如何实现菜单的切换效果
+			   * 当前被点击的菜单增加样式
+			     class="selected"
+			   * 其他未点击的菜单删除样式
+			     class="selected"
+			*/	
+			$(this).parent("dd").siblings("dd").children("a").removeClass("selected");
+			$(this).addClass("selected");
+			// 3. 点击菜单显示对应内容
+			var aId=$(this).attr("id");
+			var d=aId.substring(0,aId.indexOf("Link"));
+			var $div=$("#"+d+"Content");
+			$div.show(1000);
+			$div.siblings().hide(1000);
+		});
+	});
+  </script>
+
+ </head>
+ <body>
+	<!-- 导航区 -->
+	<div id="nav">
+		<div class="w">
+			<div class="logo">
+				<a href="http://www.jd.com" id="e1"></a>
+				<a href="http://www.jd.com" id="e2">我的京东</a>
+				<a href="http://www.jd.com" id="e3">返回京东首页</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- 内容区容器 -->
+	<div id="container">
+		<div class="w">
+			<!-- 左侧列表 -->
+			<dl id="playlist">
+				<dt>我的京东</dt>
+				<dd><a id="orderLink" href="#" class="selected">我的订单</a></dd>
+				<dd><a id="recordLink" href="#">消费记录</a></dd>
+				<dd><a id="lotteryLink" href="#">幸运抽奖</a></dd>
+			</dl>
+			<!-- 右侧内容区 -->
+			<div id="content">
+				<!-- 订单列表 -->
+				<div id="orderContent">
+					<table id="orderList" width="100%">
+						<tr>
+							<th width="50%">订单信息</th>
+							<th width="10%">收货人</th>
+							<th width="10%">订单金额</th>
+							<th width="10%">
+								<select id="orderTime">
+									<option value="1">最近三个月</option>
+									<option value="2">今年内</option>
+									<option value="3">2014年</option>
+									<option value="4">2013年</option>
+									<option value="5">2012年</option>
+									<option value="6">2012年以前</option>
+								</select>
+							</th>
+							<th width="10%">
+								<select id="orderStatus">
+									<option value="1">全部状态</option>
+									<option value="2">等待付款</option>
+									<option value="3">等待自提</option>
+									<option value="4">等待收货</option>
+									<option value="5">已完成</option>
+									<option value="6">已取消</option>
+								</select>
+							</th>
+							<th width="10%">操作</th>
+						</tr>
+						<!--新内容-->
+					</table>
+				</div>
+				<div id="recordContent">
+					<canvas id="recordCvs" width="600" height="400">
+						您的浏览器不支持canvas
+					</canvas>
+				</div>
+				<div id="lotteryContent">
+					<canvas id="lotteryCvs" width="500" height="500"></canvas>
+					<button id="btnLottery">开始抽奖</button>
+				</div>
+			</div>		
+		</div>
+	</div>
+
+
+	<!-- 页脚区 -->
+	<div id="foot">
+网络文化经营许可证京网文[2011]0168-061号  Copyright © 2004-2015  京东JD.com 版权所有<br/>
+京东旗下网站：English Site
+    </div>
+ </body>
+	
+</html>

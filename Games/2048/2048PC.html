@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+		<title>2048PC版</title>
+		<link rel="icon" href="../../favicon.ico"/>
+		<link href="2048PC.css" rel="stylesheet" type="text/css"/>
+		<!--[if lt IE 9]>
+		<script type="text/javascript" src="../../JS/compatible/html5shiv.min.js"></script>
+		<script type="text/javascript" src="../../JS/compatible/respond.min.js"></script>
+		<script type="text/javascript" src="../../JS/compatible/DOMAssistantCompressed-2.7.4.js"></script>
+		<script type="text/javascript" src="../../JS/compatible/ie-css3.js"></script>
+		<![endif]-->
+		<script src="animation.js"></script>
+		<script src="2048PC.js"></script>
+	</head>
+
+	<body>
+		<p>
+			得分(Score):<span id="score"></span>  
+			历史最高分(Top1):<span id="top">0</span>
+		</p>
+		<div id="gridPanel">
+			
+		</div>
+		<div id="gameOver">
+			<div><!--全屏半透明背景--></div>
+			<p><!--前景对话框-->
+				Game Over!<br/>
+				得分(Score):<span id="final"></span><br/>
+				<a class="btn" onclick="game.start()">Try again!</a>
+			</p>
+		</div>
+	</body>
+</html>

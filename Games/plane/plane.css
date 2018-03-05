@@ -1,0 +1,37 @@
+body{
+    margin:0;
+    padding:0;
+}
+div#box
+{
+    margin:0px auto;
+    background-color:#323232;
+    text-align:center;
+    vertical-align:middle;
+    width:480px;
+    height:650px;
+    position:relative;
+}
+#box>input
+{
+
+    font-size:80px;
+    font-family:"Hobo Std";
+    line-height:80px;
+    position:absolute;
+    font-weight:bold;
+    background-color:#eee;
+    color:#666;
+    top:50%;
+    left:50%;
+    border:5px solid #fff;
+    outline:none;
+    padding:5px;
+    cursor:pointer;
+    width:400px;
+    text-align:center;
+    margin-left:-200px;
+}
+#beStart{
+    display:none;
+}

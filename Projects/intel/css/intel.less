@@ -1,0 +1,138 @@
+//引入Bootstrap.less
+@import "bootstrap.less";
+/****************用户自定义样式**********************/
+.logo{
+  display: inline-block;
+  height: 42px;
+  width: 63px;
+  background:url("../img/hdr-spr.png") no-repeat 0 -512px;
+  margin-top: -11px;
+}
+.register{
+  width: 400px;
+}
+.listText{
+  background-color: #0171C5;
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.boxShadow{
+  box-shadow:9px 9px 3px #00549A;
+}
+.listText li>a{
+  font-size: 0.8em;
+  color: @text-color-light;
+}
+.borderLeft{
+  border-left: 1px solid #ccc;
+}
+.weibo{
+  padding-left: 30px;
+  background: url("../img/social_sprite_smushed.png") no-repeat 0 -770px;
+}
+.shequ{
+  padding-left: 30px;
+  background: url("../img/social_sprite_smushed.png") no-repeat 0 -70px;
+}
+.footer li{
+  line-height:3em;
+}
+.main{
+  background-color: @blue-dark;
+  color:@text-color-light;
+}
+.togglePar{
+  position:relative;
+  overflow: hidden;
+}
+.toggltUp{
+  background-color: rgba(0,0,0,.7);
+  position:absolute;
+  width:100%;
+  height: 100%;
+  z-index: 200;
+  padding:15px 25px;
+  >h5{
+    margin-top: 15px;
+    line-height: 23px;
+  }
+  transition: all 0.5s linear 0s;
+}
+.toggltUp:hover{
+  top:0;
+}
+.logoIn .register-dropdown{
+  background-color: #fff;
+  padding:10px 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+@media screen and (min-width: @screen-lg){
+  .main >.container>.row{
+    margin-bottom: 30px;
+  }
+  .marginBottom{
+    margin-bottom: 15px;
+  }
+  .listText li>a{
+    line-height: 2.5em;
+  }
+  .imgCenter{
+    margin-top: 30px;
+  }
+  .toggltUp{
+    top:75%;
+  }
+}
+@media screen and (min-width: @screen-md) and (max-width: @screen-lg){
+  .main >.container>.row{
+    margin-bottom: 30px;
+  }
+  .marginBottom{
+    margin-bottom: 15px;
+  }
+  .listText li>a{
+    line-height: 2em;
+  }
+  .imgCenter{
+    margin-top: 20px;
+  }
+  .toggltUp{
+    top:70%;
+  }
+}
+@media screen and (max-width: @screen-md) and (min-width: @screen-sm){
+  .main >.container>.row>div>.row{
+    margin-bottom: 15px;
+  }
+  .listText li>a{
+    line-height: 2.4em;
+  }
+  .imgCenter{
+    margin-top: 10px;
+  }
+  .toggltUp{
+    top:70%;
+  }
+}
+@media screen and (max-width: @screen-sm){
+  .main >.container>.row>div>.row>div{
+    margin-bottom: 15px;
+  }
+  .listText li>a{
+    line-height: 2em;
+  }
+  .imgCenter{
+    width: 100%;
+    margin-top: 0;
+  }
+  img[class*="smimg"]{
+    width: 100%;
+  }
+  .toggltUp{
+    top:75%;
+  }
+}
+

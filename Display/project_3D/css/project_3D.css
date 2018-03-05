@@ -1,0 +1,36 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: #f00;
+}
+.project_3d_box {
+  width: 60%;
+  margin: 0 auto;
+  /*transform 旋转元素*/
+  position: relative;
+}
+.project_3d_box .img_box {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.project_3d_box .img_box .project_screenshot {
+  width: 100%;
+}
+.project_3d_box .left_img {
+  transform: perspective(2000px) translateX(-40%) scale(0.8, 0.8) rotateY(40deg);
+  z-index: 10;
+}
+.project_3d_box .current_img {
+  transform: perspective(2000px) translateY(30%) scale(1, 1);
+  z-index: 100;
+}
+.project_3d_box .right_img {
+  transform: perspective(2000px) translateX(40%) scale(0.8, 0.8) rotateY(-40deg);
+  z-index: 10;
+}

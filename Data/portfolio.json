@@ -1,0 +1,26 @@
+{
+  "status":true,
+  "portfolio_type":[
+    {"code":"*", "name":"全部"},
+    {"code":".webApp", "name":"App"},
+    {"code":".responsive", "name":"响应式"},
+    {"code":".html5", "name":"HTML5"},
+    {"code":".station", "name":"知名网站"},
+    {"code":".store", "name":"线上商城"},
+    {"code":".game", "name":"游戏"}
+  ],
+  "portfolio_list":[
+    {"name":"小米官网首页","href":"../Projects/mi/index.html","imgSrc":"portfolio/img/mi_thumb.png","category":"station store"},
+    {"name":"俄罗斯方块PC版","href":"../Games/tetris/tetrisPC.html","imgSrc":"portfolio/img/tetris_thumb.png","category":"game"},
+    {"name":"飞机大战（PC+移动）","href":"../Games/plane/index.html","imgSrc":"portfolio/img/plane_thumb.png","category":"game html5"},
+    {"name":"开饭啦WEB","href":"http://liliuzhu.applinzi.com","imgSrc":"portfolio/img/web_thumb.png","category":"store responsive"},
+    {"name":"京东首页","href":"../Projects/jd/jd_index/jd_index.html","imgSrc":"portfolio/img/jd_index_thumb.png","category":"station store"},
+    {"name":"2048（PC+移动）","href":"../Games/2048/2048All.html","imgSrc":"portfolio/img/2048_thumb.png","category":"game"},
+    {"name":"京东用户中心","href":"../Projects/jd/user_center/UserCenter.html","imgSrc":"portfolio/img/jd_userCenter_thumb.png","category":"station store"},
+    {"name":"京东详情页","href":"../Projects/jd/jd_detail/jd_detail.html","imgSrc":"portfolio/img/jd_detail_thumb.png","category":"station store"},
+    {"name":"俄罗斯方块（PC+移动）","href":"../Games/tetris/tetrisAll.html","imgSrc":"portfolio/img/tetris_thumb.png","category":"game"},
+    {"name":"intel官网首页","href":"../Projects/intel/index.html","imgSrc":"portfolio/img/intel_thumb.png","category":"responsive station"},
+    {"name":"2048PC版","href":"../Games/2048/2048PC.html","imgSrc":"portfolio/img/2048_thumb.png","category":"game"},
+    {"name":"开饭啦APP","href":"./AppDownload.html","imgSrc":"portfolio/img/app_thumb.png","category":"webApp responsive store"}
+  ]
+}

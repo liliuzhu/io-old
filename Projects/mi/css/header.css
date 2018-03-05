@@ -1,0 +1,36 @@
+/*头部样式*/
+.top-nav {
+  background-color: #333;
+  margin: 0 auto;
+  font-size: 12px;
+}
+.top-navs {
+  height: 40px;
+  line-height: 40px;
+}
+.top-navs a {
+  color: #B0B0B0;
+}
+.top-navs a:hover {
+  color: #fff;
+}
+.sep {
+  margin: 6px;
+  color: #424242;
+}
+.shopCar {
+  padding-left: 15px ;
+  padding-right: 15px;
+  margin-left: 20px;
+  background-color: #424242;
+}
+.shopCar i {
+  font-size: 20px;
+  line-height: 20px;
+  padding-right: 3px;
+  vertical-align: -2px;
+}
+a.shopCar:hover {
+  background-color: #fff;
+  color: #FF6700;
+}

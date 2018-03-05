@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>李留住个人简介</title>
+    <link rel="icon" href="../favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="../CSS/bootstrap.min-v3.3.7.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/Display.css">
+    <link rel="stylesheet" type="text/css" href="portfolio/css/main.css">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="../JS/compatible/html5shiv.min.js"></script>
+    <script type="text/javascript" src="../JS/compatible/respond.min.js"></script>
+    <script type="text/javascript" src="../JS/compatible/DOMAssistantCompressed-2.7.4.js"></script>
+    <script type="text/javascript" src="../JS/compatible/ie-css3.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="../JS/jquery.min-1.11.3.js"></script>
+    <!--include-->
+    <script type="text/javascript" src="./include.js"></script>
+    <script type="text/javascript" src="../JS/bootstrap.min-v3.3.7.js"></script>
+    <script type="text/javascript">
+        /********个人简介********/
+        $(function(){
+            $(".myself .list-group-item h3").on("click",function(){
+                $(this).children("span").toggleClass("glyphicon-minus");
+                $(this).next("div").slideToggle();
+            });
+        });
+
+    </script>
+</head>
+<body>
+<!--begin：导航条-->
+<include src="./include/navbar.html"></include>
+<!--简介内容-->
+<section class="myself">
+    <div class="container list">
+        <h1 class="text-center">个人简介</h1>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="text-center">
+                    <!-- Button trigger modal -->
+                    <div class="row">
+                        <div class="col-xs-4 col-xs-offset-4 text-center">
+                            <a href="javascript:void(0)" data-toggle="modal" data-target="#myModal">
+                                <img class="img-circle img-responsive" src="../Img/Head_portrait.jpg" alt="头像" title="头像"/>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">我的头像</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="../Img/Head_portrait.jpg" class="img-responsive" alt="我的头像" title="我的头像"/>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--列表组-->
+                <ul class="list-group resume-table">
+                    <li class="list-group-item">
+                        <h3 class="text-center">基本信息<span class="right glyphicon glyphicon-plus text-right"></span></h3>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <th>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：李留住</th>
+                                    <th>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：男</th>
+                                </tr>
+                                <tr>
+                                    <th>民&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;族：汉族</th>
+                                    <th>出生年月：1992.11</th>
+                                </tr>
+                                <tr>
+                                    <th>电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话：18519748274</th>
+                                    <th>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：<a href="mailto:liliuzhu1992@163.com">liliuzhu1992@163.com</a></th>
+                                </tr>
+                                <tr>
+                                    <th>学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;历：本科</th>
+                                    <th>毕业院校：河南大学民生学院</th>
+                                </tr>
+                                <tr>
+                                    <th>专业：电子信息科学与技术</th>
+                                    <th>联系地址：昌平区沙河镇松兰堡村</th>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <h3 class="text-center">求职意向<span class="right glyphicon glyphicon-plus text-right"></span></h3>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <th>期望城市：北京</th>
+                                    <th>期望职位：Web前端开发工程师</th>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <h3 class="text-center">技能证书<span class="right glyphicon glyphicon-plus text-right"></span></h3>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <th>1. 计算机二级</th>
+                                    <th>2.全国电子专业人才证书—单片机设计与开发应用工程师（高级）</th>
+                                </tr>
+                                <tr>
+                                    <th>3. 普通话二级甲等</th>
+                                    <th>4. 机动车驾驶证</th>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <h3 class="text-center">所获荣誉<span class="right glyphicon glyphicon-plus text-right"></span></h3>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <th>1.蓝桥杯河南赛区单片机设计与开发组一等奖</th>
+                                    <th>2.单项奖学金</th>
+                                </tr>
+                                <tr>
+                                    <th>3.蓝桥杯全国总决赛单片机设计与开发组二等奖</th>
+                                    <th>4.优秀共青团员</th>
+                                </tr>
+                                <tr>
+                                    <th>5.多次获得优秀学生与优秀学生奖学金</th>
+                                    <th>6.优秀运动员</th>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <h3 class="text-center">职业技能<span class="right glyphicon glyphicon-plus text-right"></span></h3>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                <tr><th>1.熟练掌握 HTML、CSS，纯手写代码实现各种互联网项目前端页面的编写</th></tr>
+                                <tr><th>2.熟练掌握原生JavaScript、DOM</th></tr>
+                                <tr><th>3.熟练掌握HTML5，CSS3并结合原生WebView或APICloud等技术可以实现Web App的开发</th></tr>
+                                <tr><th>4.熟悉Ajax的相关技术，能够利用JSON进行数据传输，实现和服务器的异步交互</th></tr>
+                                <tr><th>5.熟悉前端主流框架与代码库，能够熟练使用BootStrap、AUI、jQuery、Zepto等前端开发工具</th></tr>
+                                <tr><th>6.熟悉Vue及附属工具的的基本使用，并不断探索其使用方法与技巧</th></tr>
+                                <tr><th>7.熟悉less语言编程，通过编译进行引用</th></tr>
+                                <tr><th>8.了解PHP服务器端技术、MySQL数据库以及HTTP 协议</th></tr>
+                                <tr><th>9.熟悉PS,可以完成PSD切图</th></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <h3 class="text-center">项目介绍<span class="right glyphicon glyphicon-plus text-right"></span></h3>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <th>
+                                        <h4>项目名称：案件管理系统</h4>
+                                        <p>项目描述：针对律师事务所诉讼案件信息的管理系统。该系统包括PC端与移动App应用。主要提供案件信息、调查信息、品牌等信息的多平台管理以及信息的采集与上传。</p>
+                                        <p>项目责任：主要负责系统1.0版本的PC端信息管理功能，以及运用APICloud开发框架对移动端的案件证物信息采集系统进行混合式开发、迭代更新以及App2.0版本的重构。</p>
+                                        <span>项目收获：</span>
+                                        <ol>
+                                            <li>通过使用Echarts对案件信息进行分类汇总，逐渐熟Echarts的使用技巧。</li>
+                                            <li>将自学的APICloud真实的应用到实际项目中，深化了对APICloud的认识与使用技巧。</li>
+                                            <li>移动端重新进行UI设计，独自对移动端进行开发，整体上兼顾了移动端的响应式。</li>
+                                        </ol>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <h4>项目名称：真视通无纸化会议系统</h4>
+                                        <p>项目描述：该项目是一个具有实时通讯与同步功能的会议系统，项目客户端要求同时兼容Android、IOS、PC三大设备平台，其中 Android与IOS采用原生+H5的混合模式开发。该项目前端方面包括客户端和系统管理两部分，设备之间的通信与同步均通过webSocket实现，其中客户端的同步参会为整个项目的核心也是项目的难点，该功能主要应用H5的canvas元素来实现画板同步。</p>
+                                        <p>项目责任：初期使用Bootstrop框架切出兼容webView及PC浏览器的HTML页面以及插件，中期负责复杂逻辑与功能开发，并与后台协调同步开发和数据联调，后期进行代码优化和功能完善以及部分功能需求的修改。</p>
+                                        <span>项目收获：</span>
+                                        <ol>
+                                            <li>客户需求的不停地改进，造成项目长时间的延期，增加开发周期。</li>
+                                            <li>Android、IOS、PC平台的兼容调试过程中踩了不少的坑，为以后的项目开发积累经验。</li>
+                                            <li>项目开发过程中以功能测试为主，缺乏大规模的压力和稳定性测，为后来项目交付埋下了不小的隐患。</li>
+                                        </ol>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <h4>项目名称：创业之家—创业实训平台</h4>
+                                        <p>项目描述：创业之家系统主要分为管理系统与学员系统两部分。管理系统主要针对学员，指导教师，班级等信息进行交叉管理以及对教育资源进行管理。学员系统主要通过创业学院，创业准备、模拟工商局登记、企业创建步骤、企业多方面管理、创业计划书、在线考试、调查问卷、投票等模块对学员进行针对性的创业指导。</p>
+                                        <p>项目责任：首先使用Bootstrop实现UI设计的学员系统，以及管理系统静态页面，然后与Tomcat+mySQL建立连接，利用jQuery+原生JS实现动态数据交互。</p>
+                                        <span>项目收获：</span>
+                                        <ol>
+                                            <li>通过使用JS插件以及浏览器缓存机制，实现PDF书籍的网上阅读，以及使用H5实现视频与音频的解决方案。</li>
+                                            <li>由于项目一开始需求的不明确，使得原来的UI设计并没有得到客户的认可，造成项目前端页面的再次开发重构，认识到项目前期需求的调研如何的重要。</li>
+                                            <li>多页面利用JSON格式数据，对单一mySQL数据表进行大量的数据处理，提高数据处理与逻辑思维能力。</li>
+                                        </ol>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <h4>项目名称：职业生涯发展规划系统</h4>
+                                        <p>项目描述：该项目帮助中学生对自我的能力兴趣等有较好地了解，提供学校、专业和就业方面的信息，实现对学生对生涯决策的积极引导；为教师提供生涯教育资源, 使学生的生涯规划信息可以快速有效地反馈给教师，帮助学生更好地进行生涯规划教育。</p>
+                                        <p>项目责任：参与项目需求分析、业务模块的划分，数据库表的设计。主要运用Bootstrap框架的栅格系统进行页面布局、用JavaScript实现动态页面效果部分、使用JQuery框架以及AJAX异步获取数据完善了整个流程。</p>
+                                        <span>项目收获：</span>
+                                        <ol>
+                                            <li>熟悉了如何使用Datatables实现信息的增删改查、分页、及时搜索和排序等。</li>
+                                            <li>针对一次性获取大量数据时明显的时间延迟问题，采用分批获取与分页展示以提高用户体验</li>
+                                        </ol>
+                                    </th>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <h3 class="text-center">自我评价<span class="right glyphicon glyphicon-plus text-right"></span></h3>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <th>
+                                        <p>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            性格稳重，做事认真负责，适应能力强，具有良好的沟通能力：工作中经常与客户针对项目需求进行探讨沟通和；具有较好的逻思维能力：项目实践中能够及时发现逻辑Bug和处理普通的算法问题；具有良好的自主学习能力：大学期间学习成绩排名一直处于前列；对计算机具有浓厚的兴趣：大学期间报名参加“蓝桥杯全国软件和信息技术专业人才大赛”并获得理想成绩；热爱集体，积极参加集体活动，曾多次参与策划班级集体旅游与户外烧烤活动，生活中与同事和睦相处，工作中精诚合作；热爱运动，喜欢慢跑、健身等有氧运动，曾参加“郑开国际马拉松”半程比赛。
+                                        </p>
+                                    </th>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!--页脚-->
+<include src="./include/footer.html"></include>
+</body>
+</html>

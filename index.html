@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name=”renderer” content=”webkit” />
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>李留住作品展示与个人简介</title>
+    <link rel="icon" href="./favicon.ico"/>
+    <!--demo-->
+    <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript" />
+    <meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript" />
+    <meta name="author" content="Codrops" />
+    <link rel="stylesheet" type="text/css" href="Display/demo/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="Display/demo/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="Display/demo/css/component.css" />
+
+    <link rel="stylesheet" type="text/css" href="./CSS/bootstrap.min-v3.3.7.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Display.css">
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="JS/compatible/html5shiv.min.js"></script>
+    <script type="text/javascript" src="JS/compatible/respond.min.js"></script>
+    <script type="text/javascript" src="JS/compatible/DOMAssistantCompressed-2.7.4.js"></script>
+    <script type="text/javascript" src="JS/compatible/ie-css3.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="JS/jquery.min-1.11.3.js"></script>
+    <script type="text/javascript" src="./JS/bootstrap.min-v3.3.7.js"></script>
+    <!--demo-->
+    <script type="text/javascript" src="Display/demo/js/rAF.js"></script>
+    <script type="text/javascript" src="Display/demo/js/demo-2.js"></script>
+    <!--include-->
+    <script type="text/javascript" src="Display/include.js"></script>
+    <!--Vue-->
+    <script type="text/javascript" src="./JS/vue-v2.3.0.js"></script>
+    <script type="text/javascript" src="./JS/vue-resource-v2.3.0.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#large-header").css("background-image","url('Display/demo/img/demo-"+parseInt(Math.random()*(7-1)+1)+"-bg.jpg')");
+            //检查boot
+//            (function () { var s = document.createElement("script"); s.onload = function () { bootlint.showLintReportForCurrentDocument([]); }; s.src = "JS/bootlint.js"; document.body.appendChild(s) })();
+            VueReady();
+         });
+        function VueReady(){
+            var vm=new Vue({
+                el:"#app",
+                data:{
+                    bannerList:[],
+                    indexPortfolio:{}
+                },
+//                computed:{
+//                    filterPortfolio:function(){
+//                        return this.portfolio.slice(0,this.limitNum)
+//                    }
+//                },
+                mounted:function(){
+                    this.$nextTick(function(){
+                        this.getBanner();
+                    });
+                },
+                methods:{
+                    getBanner:function(){
+                        var _this=this;
+                        this.$http.get("./Data/index.json",{}).then(function(res){
+                            if(res.body.status){
+                                _this.bannerList=res.body.banner;
+                                _this.indexPortfolio=res.body.indexPortfolio;
+                            }else{
+                                alert("数据获取错误！");
+                            }
+                        });
+                    }
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<!--begin：导航条-->
+<include src="./Display/include/navbar.html"></include>
+<!--demo2-->
+<div class="demo-2">
+    <div class="content">
+        <div id="large-header" class="large-header">
+            <canvas class="demo-canvas" id="demo-canvas"></canvas>
+            <h1 class="main-title"><span>Show</span></h1>
+        </div>
+    </div>
+</div>
+<section id="app">
+    <!-- /container -->
+    <div id="my-Carousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+        <div class="carousel-inner" role="listbox">
+            <div v-for="(item,index) in bannerList" class="item" :class="{active:index==0}">
+                <a target="_blank" :href="item.href" :title="item.title">
+                    <div class="mask"></div>
+                    <img :src="item.imgSrc" :alt="item.title"/>
+                    <div class="carousel-caption">
+                        <h3>{{item.title}}</h3>
+                        <span>{{item.desc}}</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!--不随内容滚动-->
+        <a href="#my-Carousel" data-slide="prev" class="carousel-control left">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a href="#my-Carousel" data-slide="next" class="carousel-control right">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+        <!--序号指示器不随内容滚动-->
+        <ul class="carousel-indicators">
+            <li v-for="(item,index) in bannerList" :style="{margin:'0 5px'}" :data-slide-to="index" data-target="#my-Carousel" :class="{active:index==0}"></li>
+        </ul>
+    </div>
+    <div class="games" id="games">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6 col-xs-offset-3 col-sm-2  col-sm-offset-1">
+                    <div class="game-link" href="#">
+                        <div class="game-img">
+                            <img src="Img/2048.png" alt="2048" class="img-responsive trans"/>
+                            <div class="trans more-game-box">
+                                <div class="more-game text-center">
+                                    <a target="_blank" class="btn btn-info" href="./Games/2048/2048All.html">移动端</a>
+                                    <a target="_blank" class="btn btn-success" href="./Games/2048/2048PC.html">PC端</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center game-name">2048</div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-xs-offset-3 col-sm-2  col-sm-offset-2">
+                    <a class="game-link" target="_blank" href="./Games/plane/index.html">
+                        <img src="Img/plane.png" alt="2048" class="img-responsive trans"/>
+                        <div class="text-center game-name">飞机大战</div>
+                    </a>
+                </div>
+                <div class="col-xs-6 col-xs-offset-3 col-sm-2  col-sm-offset-2">
+                    <div class="game-link" href="javascript:void(0)">
+                        <div class="game-img">
+                            <img src="Img/tetris.png" alt="2048" class="img-responsive trans"/>
+                            <div class="trans more-game-box">
+                                <div class="more-game text-center">
+                                    <a target="_blank" class="btn btn-info" href="./Games/tetris/tetrisAll.html">移动端</a>
+                                    <a target="_blank" class="btn btn-success" href="./Games/tetris/tetrisPC.html">PC端</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center game-name">俄罗斯方块</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="projects">
+        <div class="container">
+            <h1>作品</h1>
+            <h4>{{indexPortfolio.desc}}</h4>
+            <div class="row">
+                <div v-for="item in indexPortfolio.portfolio" class="col-md-3 col-xs-6">
+                    <a :href="item.href" target="_blank" class="thumbnail" :title="item.name">
+                        <div class="response_square">
+                            <div class="response_square_child">
+                                <div class="image">
+                                    <div class="mask trans">
+                                        <span class="glyphicon glyphicon-link"></span>
+                                    </div>
+                                    <img class="img-responsive trans" :src="item.imgSrc" :alt="item.name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="className">{{item.name}}</div>
+                    </a>
+                </div>
+                <!--<div class="col-md-3 col-xs-6">-->
+                    <!--<a href="./Games/plane/index.html" target="_blank" class="thumbnail">-->
+                        <!--<div  class="image">-->
+                            <!--<div class="mask trans">-->
+                                <!--<span class="glyphicon glyphicon-link"></span>-->
+                            <!--</div>-->
+                            <!--<img class="img-responsive trans" src="Img/game1.png" alt="游戏">-->
+                        <!--</div>-->
+                        <!--<div class="className">游戏</div>-->
+                    <!--</a>-->
+                <!--</div>-->
+                <!--<div class="col-md-3 col-xs-6">-->
+                    <!--<a href="Display/resume.html" target="_blank" class="thumbnail">-->
+                        <!--<div class="image">-->
+                            <!--<div class="mask trans">-->
+                                <!--<span class="glyphicon glyphicon-link"></span>-->
+                            <!--</div>-->
+                            <!--<img class="img-responsive trans" src="Img/person-thumb.png" alt="个人主页">-->
+                        <!--</div>-->
+                        <!--<div class="className">个人主页</div>-->
+                    <!--</a>-->
+                <!--</div>-->
+                <!--<div class="col-md-3 col-xs-6">-->
+                    <!--<a href="http://liliuzhu.applinzi.com" target="_blank"  class="thumbnail">-->
+                        <!--<div class="image">-->
+                            <!--<div class="mask trans">-->
+                                <!--<span class="glyphicon glyphicon-link"></span>-->
+                            <!--</div>-->
+                            <!--<img class="img-responsive trans" src="Display/portfolio/img/web_thumb.png" alt="开饭啦订餐网">-->
+                        <!--</div>-->
+                        <!--<div class="className">开饭啦订餐网</div>-->
+                    <!--</a>-->
+                <!--</div>-->
+            </div>
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <a target="_self" href="./Display/portfolio.html" class="a-link">更多作品</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="intoduce">
+        <div class="container">
+            <h1>作者简介</h1>
+            <div class="row">
+                <div class="col-xs-4 col-xs-offset-4 text-center">
+                    <a target="_self" href="./Display/resume.html">
+                        <img class="img-circle img-responsive" src="Img/Head_portrait.jpg" alt="头像" title="点击前往我的简历"/>
+                    </a>
+                </div>
+            </div>
+            <h4>Hi，我叫李留住，立志做一名互联网开发工程师，目前在Web前端方向发展，精通HTML、CSS3，熟练使用JavaScript，熟悉一些常用的前端开发框架。未来有意朝着Web全栈式工程师方向发展。</h4>
+            <div class="row">
+                <div class="col-xs-6 text-right">
+                    <a target="_self" href="./Display/resume.html" class="a-link text-center">个人简介</a>
+                </div>
+                <div class="col-xs-6 text-left">
+                    <a target="_self" href="./Display/portfolio.html" class="a-link text-center">项目作品</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<include src="./Display/include/footer.html"></include>
+</body>
+</html>

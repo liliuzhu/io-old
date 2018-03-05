@@ -1,0 +1,44 @@
+{
+  "status":true,
+  "banner":[
+    {
+      "title":"英特尔官网首页",
+      "desc":"主要利用BootStrap框架来搭建响应式网页，实现在不同的设备终端显示不同的页面效果，并使用动态样式语言Less定制BootStrap组件，实现所需要的样式。",
+      "href":"./Projects/intel/index.html",
+      "imgSrc":"./Img/Bootstrap.jpg"
+    },
+    {
+      "title":"小米首页",
+      "desc":"使用HTML + CSS3实现小米官网的静态页面呈现以及部分的动画功能，大量运用JQuery中的API和原生JavaScript操作节点对象完成与用户动态交互的动画功能。",
+      "href":"./Projects/mi/index.html",
+      "imgSrc":"./Img/mi.jpg"
+    },
+    {
+      "title":"京东系列网页",
+      "desc":"使用JavaScript + HTML5 + CSS 实现京东网上商城首页的商品展示与商品详情页静态样式布局，并使用原生JavaScript实现各种动态效果，如：图片轮播、图片放大镜效果、转盘抽奖功能等。",
+      "href":"./Projects/jd/jd_index/jd_index.html",
+      "imgSrc":"./Img/jd.jpg"
+    },
+    {
+      "title":"开饭啦App",
+      "desc":"主要运用AngularJS与jQuery Mobile实现手机页面之间点击跳转与滑动跳转，手机订餐APP菜单列表、菜品详情、下单及查询订单功能。",
+      "href":"./Display/AppDownload.html",
+      "imgSrc":"./Img/app.jpg"
+    },
+    {
+      "title":"开饭啦Web",
+      "desc":"开饭啦App的网页版。主要运用AngularJS与BootStrap实现手机页面之间点击跳转，手机订餐APP菜单列表、菜品详情、下单及查询订单功能。",
+      "href":"http://liliuzhu.applinzi.com",
+      "imgSrc":"./Img/web.jpg"
+    }
+  ],
+  "indexPortfolio":{
+    "desc":"主要作品为知名电商首页静态页面，响应式网页，Web小游戏，移动端WebApp...",
+    "portfolio":[
+      {"name":"知名网站", "href":"./Projects/mi/index.html","imgSrc":"./Img/mi_thumb.jpg"},
+      {"name":"游戏", "href":"./Games/plane/index.html","imgSrc":"Img/game1.png"},
+      {"name":"个人主页", "href":"Display/resume.html","imgSrc":"Img/person-thumb.png"},
+      {"name":"开饭啦订餐网", "href":"http://liliuzhu.applinzi.com","imgSrc":"Display/portfolio/img/web_thumb.png"}
+    ]
+  }
+}

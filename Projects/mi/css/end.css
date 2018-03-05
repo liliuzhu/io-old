@@ -1,0 +1,45 @@
+/*底端*/
+.end {
+  background-color: #FAFAFA;
+  padding: 30px 0;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+.end .container .last {
+  height: 36px;
+}
+.end .container .last div {
+  display: inline-block;
+  vertical-align: top;
+}
+.end .container .last .endLogo {
+  background: #FF6700 url(../img/logo-footer.png) no-repeat center center;
+  height: 36px;
+  width: 36px;
+  margin-right: 5px;
+}
+.end .container .last .endLinks p {
+  margin-bottom: 2px;
+}
+.end .container .last .endLinks p:first-child span {
+  padding: 0 1px 0 5px;
+}
+.end .container .last .endLinks p.desc {
+  color: #b0b0b0;
+}
+.end .container .last .endLinks p.desc a {
+  color: #b0b0b0;
+}
+.end .container .last .endLinks p.desc a:hover {
+  color: #FF6700;
+}
+.end .container .last ul li {
+  margin: 0 0 0 10px;
+}
+.end .container .adText {
+  height: 19px;
+  width: 267px;
+  background: url(../img/slogan2016.png);
+  text-indent: -1000em;
+  margin: 40px auto 0 auto;
+}

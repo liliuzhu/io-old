@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name=”renderer” content=”webkit” />
+    <meta name="viewport" content="width=device-width"/>
+    <title>李留住作品展示</title>
+    <link rel="icon" href="../favicon.ico"/>
+
+    <link rel="stylesheet" type="text/css" href="portfolio/css/owl.carousel.css"/>
+    <link rel="stylesheet" type="text/css" href="portfolio/css/owl.transitions.css"/>
+    <link rel="stylesheet" type="text/css" href="portfolio/css/owl.theme.css"/>
+    <link rel="stylesheet" type="text/css" href="portfolio/css/font-awesome.min.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../CSS/bootstrap.min-v3.3.7.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/Display.css">
+    <link rel="stylesheet" type="text/css" href="portfolio/css/main.css">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="../JS/compatible/html5shiv.min.js"></script>
+    <script type="text/javascript" src="../JS/compatible/respond.min.js"></script>
+    <script type="text/javascript" src="../JS/compatible/DOMAssistantCompressed-2.7.4.js"></script>
+    <script type="text/javascript" src="../JS/compatible/ie-css3.js"></script>
+    <![endif]-->
+    <!--<script src="portfolio/js/modernizr-2.6.2.min.js"></script>-->
+    <script type="text/javascript" src="../JS/jquery.min-1.11.3.js"></script>
+    <script type="text/javascript" src="../JS/bootstrap.min-v3.3.7.js"></script>
+
+    <script src="portfolio/js/owl.carousel.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="portfolio/js/imagesloaded.pkgd.min.js"></script>
+    <script src="portfolio/js/isotope.pkgd.min.js"></script>
+    <script src="portfolio/js/jquery.fancybox.pack.js"></script>
+    <!--<script src="portfolio/js/main.js"></script>-->
+    <!--include-->
+    <script type="text/javascript" src="./include.js"></script>
+    <!--Vue-->
+    <script type="text/javascript" src="../JS/vue-v2.3.0.js"></script>
+    <script type="text/javascript" src="../JS/vue-resource-v2.3.0.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            VueReady();
+        });
+        function VueReady(){
+            var vm=new Vue({
+                el:"#app",
+                data:{
+                    actionIndex:0,
+                    typeList:[],
+                    portfolioList:[],
+                    $container:null
+                },
+                mounted:function(){
+                    this.$nextTick(function(){
+                        this.getBanner();
+                        this.jqueryEvent();
+                    });
+                },
+                methods:{
+                    initPkjd:function(){
+                        var _this=this;
+                        this.$container=$('#container-sort').imagesLoaded(function(){
+                            _this.$container.isotope({
+                                // options
+                                itemSelector: '.item',
+                                layoutMode: 'fitRows'
+                            })
+                        });
+                    },
+                    getBanner:function(){
+                        var _this=this;
+                        this.$http.get("../Data/portfolio.json",{}).then(function(res){
+                            if(res.body.status){
+                                _this.typeList=res.body.portfolio_type;
+                                _this.portfolioList=res.body.portfolio_list;
+                            }else{
+                                alert("数据获取错误！");
+                            }
+                            _this.initPkjd();
+                        });
+                    },
+                    jqueryEvent:function(){
+                        $(window).resize(function () {
+                            var $wrapSort = $('#container-sort');
+                            var $wrapSortWidth = $wrapSort.width();
+                            var $item = $wrapSort.find('.item').outerWidth();
+                            var num = parseInt($wrapSortWidth/$item);
+
+                            $wrapSort.css('paddingLeft',($wrapSortWidth - $item*num)/2);
+                        });
+                    },
+                    filterProject:function(i,attr){
+                        this.actionIndex=i;
+                        this.$container.isotope({ filter: attr });
+                    }
+                }
+            });
+        }
+    </script>
+</head>
+<body class="lightgreen">
+<!--begin：导航条-->
+<include src="./include/navbar.html"></include>
+<!-- list -->
+<section id="app" class="container list">
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <h1>个人项目</h1>
+        </div>
+    </div>
+    <div id="filters" class="row menu">
+        <div class="col-sm-12 text-center">
+            <button v-for="(item,index) in typeList" @click="filterProject(index,item.code);" type="button" :class="['btn',index==actionIndex?'btn-default':'btn-info']" :data-filter="item.code">{{item.name}}</button>
+            <!--<button v-for="(item,index) in typeList" type="button" :class="['btn',{}]" :data-filter="item.code">{{item.name}}</button>-->
+            <!--<button type="button" class="btn btn-default" data-filter="*">全部</button>-->
+            <!--<button type="button" class="btn btn-info" data-filter=".webApp">APP</button>-->
+            <!--<button type="button" class="btn btn-info" data-filter=".responsive">响应式</button>-->
+            <!--<button type="button" class="btn btn-info" data-filter=".html5">HTML5</button>-->
+            <!--<button type="button" class="btn btn-info" data-filter=".station">知名网站</button>-->
+            <!--<button type="button" class="btn btn-info" data-filter=".store">线上商城</button>-->
+            <!--<button type="button" class="btn btn-info" data-filter=".game">游戏</button>-->
+        </div>
+    </div>
+    <div class="row" style="margin-left: 0;margin-right: 0;">
+        <ul id="container-sort" class="project list-unstyled">
+            <li v-for="item in portfolioList" class="item col-md-3 col-xs-6 thumb" :class="item.category">
+                <a target="_blank" :href="item.href">
+                    <div class="thumb-wrap">
+                        <div class="response_square">
+                            <div class="response_square_child">
+                                <div class="over-hid rel">
+                                    <div class="mask trans"><span class="glyphicon glyphicon-link"></span></div>
+                                    <img class="img-responsive" :src="item.imgSrc"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="describe text-center">{{item.name}}</div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+<!-- /.list -->
+<include src="./include/footer.html"></include>
+</body>
+</html>

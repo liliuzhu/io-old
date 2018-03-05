@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>我的住址地址</title>
+		<link rel="icon" href="../favicon.ico"/>
+		<script id="baiDuMap" type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=HbUVYMUg6PwbOnXkztdgSQlQ"></script>
+		<style type="text/css">
+			body, html,#allmap {
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			margin:0;
+			font-family:"微软雅黑";
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="allmap"></div>
+		<script>
+			try{
+				var map=new BMap.Map("allmap");
+				var point=new BMap.Point(116.303703,40.156589);
+				map.centerAndZoom(point,19);
+				map.enableScrollWheelZoom();
+
+				var scale=new BMap.ScaleControl({
+					anchor:BMAP_ANCHOR_BOTTOM_RIGHT
+				});
+				map.addControl(scale);
+				/*
+				 2. 缩放平移控件
+				 NavigationControl()
+				 */
+				var nav=new BMap.NavigationControl();
+				map.addControl(nav);
+				/*
+				 3.提供地图类型切换控件
+				 MapTypeControl();
+				 */
+				var type=new BMap.MapTypeControl();
+				map.addControl(type);
+				/*
+				 4.百度地图的缩略图功能
+				 OverviewMapControl()
+				 */
+				var view=new BMap.OverviewMapControl({
+					isOpen:true
+				});
+				map.addControl(view);
+
+				var marker=new BMap.Marker(point);
+				map.addOverlay(marker);
+				var label = new BMap.Label("我的住址：昌平区沙河镇松兰堡村",{offset:new BMap.Size(20,-10)});
+				marker.setLabel(label);
+				marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+				var circle=new BMap.Circle(point,100,{
+					strokeColor:"blue",
+					fillColor:"lightblue",
+					strokeWeight:2,
+					strokeOPacity:0.3,
+					fillOpacity:0.2
+				});
+				map.addOverlay(circle);
+			}catch (e){
+				window.location.replace("http://liliuzhu.gitee.io/home/Display/address.html");
+			}
+		</script>
+	</body>
+</html>

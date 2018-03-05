@@ -1,0 +1,120 @@
+/*封装$*/
+window.$=HTMLElement.prototype.$=function(selector){
+    var elems=(this==window?document:this)
+        .querySelectorAll(selector);
+    return elems.length==0?null:elems.length==1?elems[0]:elems;
+}
+/*广告图片数组*/
+var imgs=[
+    {"i":0,"img":"images/index/banner_01.jpg"},
+    {"i":1,"img":"images/index/banner_02.jpg"},
+    {"i":2,"img":"images/index/banner_03.jpg"},
+    {"i":3,"img":"images/index/banner_04.jpg"},
+    {"i":4,"img":"images/index/banner_05.jpg"}
+];
+
+var slider={
+	LIWIDTH:0,
+	DURATION:500,
+	STEPS:50,
+	INTERVAL:0,
+	moved:0,
+	WAIT:3000,
+	canAuto:true,
+	timer:null,
+	distance:0,
+	step:0,
+	left:0,
+	init:function()
+	{
+		this.LIWIDTH=parseFloat(getComputedStyle($("#slider")).width);
+		this.INTERVAL=this.DURATION/this.STEPS;
+		$("#imgs").style.width=this.LIWIDTH*imgs.length+"px";
+		for(var i=1,html="";i<=imgs.length;i++)
+		{
+			html+="<li>"+i+"</li>";
+		}
+		$("#indexs").innerHTML=html;
+		$("#indexs>li")[0].className="hover";
+		this.updateView();
+		
+		$("#indexs").addEventListener('mouseover',function(e){
+			e=e||window.event;
+			var target=e.target||e.srcElement;
+			if(target.nodeName=="LI"&&target.className!="hover")
+			{
+				this.move(target.innerHTML-$("#indexs>li.hover").innerHTML);
+			}
+		}.bind(this));
+		this.autoMove();//启动自动轮播
+//为id为slider的div绑定鼠标进入和移出事件
+		$('#slider').addEventListener(
+				'mouseover',this.changeCanAuto.bind(this));
+		$('#slider').addEventListener(
+				'mouseout',this.changeCanAuto.bind(this));
+	},
+	changeCanAuto:function(){
+		this.canAuto=this.canAuto?false:true;
+	},
+	autoMove:function(){
+		//反复询问canAuto，直到为true，才调用move
+		this.timer=setTimeout(function(){
+			if(this.canAuto){
+				this.move(1);
+			}else{
+				this.autoMove();
+			}
+		}.bind(this),this.WAIT);
+	},
+	updateView:function()
+	{
+		for(var i=0,html="";i<imgs.length;i++)
+		{
+			html+="<li><img src="+imgs[i].img+"></li>";
+		}
+		$("#imgs").innerHTML=html;
+		$("#indexs>li.hover").className="";
+		$("#indexs>li")[imgs[0].i].className="hover";
+	},
+	move:function(n)
+	{
+		clearTimeout(this.timer);
+		this.timer=null;
+		if(n<0)
+		{
+			$("#imgs").style.left=(this.left-=(-n)*this.LIWIDTH)+"px";
+			imgs=imgs.splice(imgs.length-(-n),-n).concat(imgs);
+			this.updateView();
+		}
+		else
+		{
+			imgs=imgs.concat(imgs.splice(0,n));
+			$("#indexs>li.hover").className="";
+			$("#indexs>li")[imgs[0].i].className="hover";
+		}
+		this.distance=n*this.LIWIDTH;
+		this.step=this.distance/this.STEPS;
+		this.moveStep();
+	},
+	moveStep:function()
+	{
+		$("#imgs").style.left=(this.left-=this.step)+"px";
+		this.moved++;
+		if(this.moved<this.STEPS)
+		{
+			this.timer=setTimeout(this.moveStep.bind(this),this.INTERVAL);
+		}
+		else
+		{
+			$("#imgs").style.left="";
+			this.updateView();
+			this.left=0;
+			this.moved=0;
+			this.autoMove();
+		}
+	},
+}
+window.addEventListener("load",function()
+{
+	slider.init();
+});

@@ -1,0 +1,62 @@
+/*页脚*/
+.footer .container {
+  background-color: #fff;
+}
+.footer .container .service {
+  overflow: hidden;
+}
+.footer .container .service ul li {
+  font-size: 16px;
+  width: 244px;
+  margin: 20px 0;
+  text-align: center;
+}
+.footer .container .service ul li i {
+  font-size: 24px;
+  vertical-align: -4px;
+  margin-right: 5px;
+}
+.footer .container .service ul li:not(:first-child) {
+  border-left: 1px solid #e0e0e0;
+}
+.footer .container .footer-links {
+  overflow: hidden;
+  margin: 30px auto;
+}
+.footer .container .footer-links dl {
+  float: left;
+  width: 163px;
+}
+.footer .container .footer-links dl dt {
+  margin-bottom: 20px;
+}
+.footer .container .footer-links dl dd {
+  margin: 0 0 10px 0;
+  font-size: 12px;
+}
+.footer .container .footer-links dl dd a {
+  color: #757575;
+}
+.footer .container .footer-links dl dd a:hover {
+  color: #ff6700;
+}
+.footer .container .footer-links div {
+  text-align: center;
+  width: 244px;
+  border-left: 1px solid #e0e0e0;
+}
+.footer .container .footer-links div span {
+  font-size: 22px;
+  padding-bottom: 6px;
+}
+.footer .container .footer-links div p {
+  margin-bottom: 6px;
+}
+.footer .container .footer-links div a.btn-small {
+  display: inline-block;
+  width: 118px;
+  height: 28px;
+  font-size: 12px;
+  line-height: 28px;
+  border: 1px solid #ff6700;
+}

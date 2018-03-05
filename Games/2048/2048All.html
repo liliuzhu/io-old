@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+		<meta name="viewport" content="width=device-width">
+		<title>2048通用版</title>
+		<link rel="icon" href="../../favicon.ico"/>
+		<link href="2048All.css" rel="stylesheet" type="text/css"/>
+		<style>
+			html,body
+			{
+				margin:0 auto;
+				padding:0;
+				width:100%;
+				height:100%;
+			}
+		</style>
+		<!--[if lt IE 9]>
+		<script type="text/javascript" src="../../JS/compatible/html5shiv.min.js"></script>
+		<script type="text/javascript" src="../../JS/compatible/respond.min.js"></script>
+		<script type="text/javascript" src="../../JS/compatible/DOMAssistantCompressed-2.7.4.js"></script>
+		<script type="text/javascript" src="../../JS/compatible/ie-css3.js"></script>
+		<![endif]-->
+		<script src="animation.js"></script>
+		<script src="2048All.js"></script>
+	</head>
+
+	<body>
+		<p> 
+			历史最高分(Top1):<span id="top">0</span><br/>
+			得分(Score):<span id="score"></span> 
+		</p>
+		<div id="gridPanel">
+			
+		</div>
+		<div id="gameOver">
+			<div><!--全屏半透明背景--></div>
+			<p><!--前景对话框-->
+				Game Over!<br/>
+				得分(Score):<span id="final"></span><br/>
+				<a class="btn" onclick="game.start()">Try again!</a>
+			</p>
+		</div>
+	</body>
+</html>

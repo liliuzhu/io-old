@@ -1,0 +1,430 @@
+/********全局样式***************/
+body{
+  padding-top: 50px;
+  background-color: #101010;
+}
+section{
+  padding: 0;
+}
+.right{
+  float: right;
+}
+a:hover,a:focus{
+  text-decoration: none;
+}
+.trans{
+  -webkit-transition: all 0.3s linear 0s;
+  -moz-transition: all 0.3s linear 0s;
+  -ms-transition: all 0.3s linear 0s;
+  -o-transition: all 0.3s linear 0s;
+  transition: all 0.3s linear 0s;
+}
+#ClCache {
+  display: none;
+}
+.demo-canvas{
+  width: 100vw;
+  height:100vh;
+}
+.response_square{
+  margin: 0;
+  display: block;
+  width: 100%;
+  padding-top:100%;
+  position: relative;
+  >.response_square_child{
+    display: block;
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+}
+/****************用户自定义样式********************/
+.logo{
+  display: inline-block;
+  height:50px;
+  width:70px;
+  background: #101010 url(../Img/logo.png) no-repeat;
+  margin-top: -15px;
+}
+/************遮罩层*****************/
+    .mask{
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      background-color: rgba(0,0,0,0.3);
+      position: absolute;
+      z-index: 10;
+      left: 0;
+      top: 0;
+    }
+/************轮播广告文字*****************/
+.carousel-control{
+  z-index: 20;
+}
+.carousel .item>a{
+  display: block;
+}
+/*********媒体查询**************/
+@media screen and (max-width: 767px){
+  .carousel .carousel-caption{
+    top: 0;
+    h3,span{
+      font-size: 1.5em;
+    }
+    span{
+      font-size: 0.5em;
+    }
+  }
+}
+@media screen and (min-width: 768px) and (max-width:991px){
+  .carousel .carousel-caption{
+    top: 20%;
+    h3,span{
+      font-size: 2em;
+    }
+    span{
+      font-size: 1.3em;
+    }
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1199px){
+  .carousel .carousel-caption{
+    top: 30%;
+    h3,span{
+      font-size: 3em;
+    }
+    span{
+      font-size: 1.5em;
+    }
+  }
+}
+@media screen and (min-width: 1200px){
+  .carousel .carousel-caption{
+    top: 35%;
+    h3,span{
+      font-size: 3.5em;
+    }
+    span{
+      font-size: 1.8em;
+    }
+  }
+}
+/**************游戏*******************/
+.games{
+  .col-xs-6{
+    >.game-link{
+      width:100%;
+      cursor: pointer;
+      display: inline-block;
+      .game-img{
+        position: relative;
+      }
+      .more-game-box{
+        bottom: 110%;
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        height: 0;
+      }
+      .game-name{
+        margin-top: 12%;
+        font-size: 1.6em;
+        color: #fff;
+      }
+      .more-game{
+        width: 100%;
+        border-radius: 10px;
+        background-color: #fff;
+        position: relative;
+        z-index: 20;
+        padding:10px 15px;
+        a{
+          display: block;
+          margin: 10px 0;
+        }
+      }
+      .more-game:after{
+        content: " ";
+        display: block;
+        position: absolute;
+        height:0;
+        width: 0;
+        border: 10px solid transparent;
+        border-top-color: #fff;
+        left: 50%;
+        top:100%;
+        margin-left: -10px;
+      }
+    }
+    >.game-link:hover{
+      img{
+        -o-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+      }
+      .more-game-box{
+       height:128px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px){
+  .games{
+    background-color: #B22222;
+    .row{
+      >div{
+        padding: 20px 0;
+        >div{
+          margin: 30px 0;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 768px){
+  .games{
+    background-color: #B22222;
+    .row{
+      >div{
+        padding: 80px 0;
+      }
+    }
+  }
+}
+/************作品************/
+h1{
+  font-size: 36px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #49C9DE;
+}
+.projects,.intoduce{
+  background-color: #002800;
+ padding-bottom: 30px;
+  h4{
+    margin-bottom: 50px;
+    color: #fff;
+  }
+}
+.thumbnail{
+  border: none;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 0;
+  display: block;
+  .image{
+    overflow: hidden;
+    position: relative;
+    .mask{
+      opacity: 0;
+      span{
+        font-size: 4em;
+        color: #fff;
+        display: inline-block;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        -webkit-transition: all .5s;
+        transition: all .5s;
+      }
+    }
+  }
+  .className{
+    color: #566473;
+    height: 54px;
+    line-height: 54px;
+    width: auto;
+    color: rgba(0,0,0,0.8);
+    background-color: #fff;
+  }
+  &:hover{
+    box-shadow:0 0 3px 3px rgba(0, 204, 204, 0.5);
+    .mask{
+      opacity: 1;
+    }
+    img{
+      -webkit-transform: scale(1.1,1.1);
+      -o-transform: scale(1.1,1.1);
+      -moz-transform: scale(1.1,1.1);
+      -ms-transform: scale(1.1,1.1);
+      transform: scale(1.1,1.1);
+    }
+    .className{
+        color:#49C9DE;
+    }
+  }
+}
+/*******作者简介********/
+.intoduce{
+  background-color: #002839;
+}
+.a-link{
+  margin: 20px auto;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.65);
+  display: inline-block;
+  border-radius: 50px;
+  width: 130px;
+  height: 50px;
+  color: rgba(255,255,255,0.65);
+  line-height: 50px;
+  font-size: 18px;
+  z-index: 1;
+}
+.a-link:after{
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 0;
+  width: 0;
+  height: 50px;
+  border-radius: 50px;
+  background-color: #49C9DE;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  z-index: -1;
+}
+.a-link:hover{
+  text-decoration: none;
+  color: #fff;
+}
+.a-link:hover:after{
+    width: 105%;
+}
+/**************联系我************************/
+footer{
+  color: #fff;
+  font-size: 1.5em;
+  background-color: #101010;
+  padding-bottom: 35px;
+  .row.contact{
+    >div{
+      padding: 5px 0;
+      text-align: center;
+      a{
+        color: #fff;
+      }
+      a:hover{
+        color: #888;
+        font-size: 0.7em;
+      }
+    }
+  }
+  .row.share{
+    >div{
+      padding: 40px 0;
+    }
+  }
+  .jiathis_style_32x32{
+      margin: 0 auto;
+    overflow: hidden;
+    width: 270px;
+    a{
+      float: left;
+    }
+  }
+}
+/***********尾部**************/
+div.end{
+  background-color: #252525;
+  border-top:1px solid #444;
+  padding: 20px 0;
+  p{
+    text-align: center;
+    color: #fff;
+  }
+}
+/**********简历*************/
+.lightgreen{
+  background-color: #002800;
+}
+.myself{
+  font-family: weiruanyahei, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.resume-table{
+  color: #fff;
+  .table{
+    color: #bbb;
+    > tbody > tr > th{
+      border-color: #aaa;
+      width: 50%;
+      ol{
+        li{
+          list-style-type: decimal;
+        }
+      }
+    }
+  }
+  .list-group-item{
+    background-color: transparent;
+    border-color: #666;
+    h3{
+      margin: 10px auto;
+      cursor: pointer;
+      span{
+        font-size: 0.8em;
+      }
+    }
+    div.table-responsive{
+      display: none;
+    }
+  }
+  .list-group-item:hover{
+    background-color: #111;
+  }
+}
+/*******联系方式*********/
+.container{
+  .row{
+    .way-box{
+      >a{
+        display: block;
+        padding: 10px 0;
+        margin: 20px auto;
+      }
+      h1{
+        margin-bottom: 20px;
+      }
+      h3{
+        margin: 0 auto;
+      }
+      a:hover{
+        h1,h3{
+          color: #fff;
+          a{
+            color: #fff;
+          }
+        }
+      }
+    }
+    .way-box.map{
+      h1,h3{
+        color:#ff6700;
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .container {
+    .row {
+      .way-box {
+        > a {
+          background-color: rgba(0,0,0,0.5);
+        }
+      }
+    }
+  }
+}
+
